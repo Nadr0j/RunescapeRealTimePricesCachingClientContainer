@@ -2,9 +2,6 @@ FROM openjdk:11-jdk-slim AS builder
 
 WORKDIR /app
 
-# Set up build argument for branch name
-ARG BRANCH=mainline
-
 # Clone the repository from GitHub
 RUN apt-get update && apt-get install -y git
 RUN git clone --branch ${BRANCH} https://github.com/Nadr0j/RunescapeRealTimePricesCachingClient .
