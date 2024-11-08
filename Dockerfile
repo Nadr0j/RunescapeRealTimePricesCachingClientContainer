@@ -2,9 +2,13 @@ FROM openjdk:11-jdk-slim AS builder
 
 WORKDIR /app
 
+ARG BRANCH
+
 # Clone the repository from GitHub
 RUN apt-get update && apt-get install -y git
 RUN git clone --branch ${BRANCH} https://github.com/Nadr0j/RunescapeRealTimePricesCachingClient .
+
+RUN chmod +x gradlew
 
 # Build the project
 RUN ./gradlew build --no-daemon
