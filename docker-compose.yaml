@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      args:
+        BRANCH: BRANCH
+    ports:
+      - "10100:10100"
