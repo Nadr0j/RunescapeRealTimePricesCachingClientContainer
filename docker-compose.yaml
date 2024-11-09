@@ -8,3 +8,5 @@ services:
         BRANCH: BRANCH
     ports:
       - "10100:10100"
+    env_file:
+      - .env
